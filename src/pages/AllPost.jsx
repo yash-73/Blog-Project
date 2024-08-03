@@ -13,7 +13,7 @@ function AllPost() {
 
     return (
         <div className="w-full py-8">
-            <Container className='flex flex-row flex-wrap gap-4'>
+            <Container className='flex flex-row flex-wrap gap-4 max-md:items-center max-md:w-full justify-center'>
                 {posts.map((post)=>(
                     <div className='p-2 m-2 min-w-28 max-w-96 rounded-3xl  hover:bg-[#ffffff36] hover:scale-105 duration-200 ' key={post.$id} >
                         <PostCard  {...post}/>

@@ -27,12 +27,16 @@ function Home() {
         return (
             <div className={`w-full  min-h-[80vh]  py-8 mt-4 flex items-center text-center`}>
             <Container>
-                    <div className="p-2 w-full gap-4 flex flex-col items-center justify-center">
+                    <div className="p-2 w-full gap-4 flex max-md:flex-col md:flex-row items-center justify-start">
                         <img src={CultureCanvasLogo} alt="Culture Canvas" />
-                        <h2 className=' absolute top-[450px] font-bold text-3xl '>Unveiling Stories, Frame by Frame..</h2>
-                        <h2 className=" absolute top-[490px]  text-2xl font-bold hover:text-gray-500 hover:cursor-pointer w-[fit-content]">
+                        <div className='flex flex-col items-center justify-center'>
+                        <h2 className='  font-bold text-3xl '>Unveiling Stories, Frame by Frame..</h2>
+                        <p>An online platform for people to talk about books , movies , art and so much more</p>
+                        <h2 className="  text-2xl font-bold hover:text-gray-500 hover:cursor-pointer w-[fit-content]">
                             <Link to='login'>Login to read posts</Link>
                         </h2>
+                        </div>
+                        
                     </div>
             </Container>
         </div>

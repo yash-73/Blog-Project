@@ -86,19 +86,19 @@ export default function PostForm({ post }) {
   }, [watch, slugTransform, setValue]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-row flex-wrap justify-between  ">
-      <div className="flex flex-col gap-8 justify-center items-center w-[60%]">
+    <form onSubmit={handleSubmit(submit)} className="flex flex-row flex-wrap justify-between max-md:flex-col ">
+      <div className="flex flex-col gap-8 justify-center items-center w-[60%] max-md:w-full max-md:px-2 ">
         <Input
           label="Title :  "
           placeholder="Title"
-          className=""
+          className="max-md:my-4"
           defaultValue={getValues('title')}
           {...register("title", { required: true })}
         />
         <Input
           label="Slug :  "
           placeholder="Slug"
-          className=""
+          className="max-md:my-4"
           defaultValue={getValues('slug')}
           {...register("slug", { required: true })}
           onInput={(e) => {
@@ -107,11 +107,11 @@ export default function PostForm({ post }) {
         />
         <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
       </div>
-      <div className="w-1/3 px-8">
+      <div className="w-1/3 max-md:my-8 px-8 max-md:w-full">
         <Input
           label="Featured Image :"
           type="file"
-          className="mb-4"
+          className=" max-md:my-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
           {...register("image", { required: !post })}
         />
@@ -128,10 +128,10 @@ export default function PostForm({ post }) {
         <Select
           options={["active", "inactive"]}
           label="Status"
-          className="mb-16 outline-none  bg-white text-black rounded-lg h-[40px]"
+          className="mb-16 outline-none  text-black rounded-lg h-[40px] max-md:mt-4"
           {...register("status", { required: true })}
         />
-        <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+        <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full max-md:my-4">
 
           {post ? "Update" : "Submit"}
         </Button>
